@@ -1,9 +1,10 @@
-proyek ini bertujuan untuk edukasi dan ini hanyalah project sederhana saat saya melakukan kerja kelompok untuk tugas UAS kuliah saya dan saya berpikiran untuk membuatnya.
-jika kalian ingin mencobanya :
+This project is for educational purposes and it was just a simple project when I was doing group work for my final year assignment and I thought of making it.
+if you want to try it:
 
-1. install node.JS dari https://nodejs.org/en/download.
+1. install node.JS from https://nodejs.org/en/download.
 2. download mongoDB
 3. git clone <url>.
-4. npm install ( menginstal seluruh depedensi)
-5. di terminal jalankan : node app.js
-6. buka di browser dengan mengetikan : http://localhost:3000/home
+4. npm install (installs all depedencies)
+5. in the terminal run: node app.js
+6. open in browser by typing : http://localhost:3000/home
+
