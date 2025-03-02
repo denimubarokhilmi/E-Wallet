@@ -1,0 +1,111 @@
+<!-- Transaksi  -->
+<div
+  class="offcanvas canvas-right offcanvas-end p-3"
+  id="transaksi"
+  style="width: 500px"
+>
+  <i
+    class="back bi bi-arrow-left-circle-fill fs-3 ms-2 mb-2"
+    data-bs-toggle="offcanvas"
+    data-bs-target="#demos"
+  ></i>
+  <div
+    class="canvas-header-templates offcanvas-header text-center d-flex justify-content-center align-items-center"
+  >
+    <div class="profile mt-3">
+      <i class="bi bi-card-checklist fs-3"></i>
+      <h4>Transaksi</h4>
+    </div>
+  </div>
+  <div class="offcanvas-body shadow-lg">
+    <div class="shadow border p-3">
+      <div class="row">
+        <div class="col-md-4 p-2 text-secondary">
+          <p
+            class="list-transaksi rounded-pill border border-primary text-center p-1"
+            data-hari="semua"
+          >
+            semua
+          </p>
+        </div>
+        <div class="col-md-4 p-2 text-secondary">
+          <p
+            class="list-transaksi rounded-pill border border-primary text-center p-1"
+            data-hari="30"
+          >
+            30 Hari terakhir
+          </p>
+        </div>
+        <div class="col-md-4 p-2 text-secondary">
+          <p
+            class="list-transaksi rounded-pill border border-primary text-center p-1"
+            data-hari="7"
+          >
+            7 Hari terakhir
+          </p>
+        </div>
+        <div class="col-md-4 p-2 text-secondary">
+          <p
+            class="list-transaksi rounded-pill border border-primary text-center p-1"
+            data-hari="1"
+          >
+            1 Hari terakhir
+          </p>
+        </div>
+      </div>
+      <hr />
+      <div class="row p-3 content-transaction">
+        <% if (transaksi.length ==0) { %>
+        <h5 class="text-secondary text-center">No Result</h5>
+        <% }else{%>
+
+        <!-- start terima uang  -->
+        <% transaksi.forEach(el=> { %> <%
+        el.receivedTransactions.forEach(element=> { %> <% if
+        (element.penerima==data.name) { %>
+
+        <div
+          class="col-md-12 border-bottom border-primary detail-transaksi-list p-3"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#<%= element.IDTransaksi %> "
+        >
+          <i class="bi bi-person-fill-up fs-4 text-primary"></i>
+          <span>Terima Uang</span>
+          <i class="bi bi-chevron-compact-right fs-4 float-end"></i>
+        </div>
+        <% } %> <% }) %> <% }) %>
+
+        <!-- end terima uang  -->
+        <!-- start tranfer  -->
+        <% transaksi.forEach(el=> { %> <% el.sentTransactions.forEach(element=>
+        { %> <% if (element.pengirim==data.name) { %>
+
+        <div
+          class="col-md-12 border-bottom border-primary detail-transaksi-list p-3"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#<%= element.IDMerchant %>"
+        >
+          <i class="bi bi-person-fill-down fs-4 text-warning"></i>
+          <span>Transfer Uang</span>
+          <i class="bi bi-chevron-compact-right fs-4 float-end"></i>
+        </div>
+        <% } %> <% }) %> <% }) %>
+        <!-- end transfer  -->
+        <%} %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- content transaksi isi saldo dan tarik uang -->
+<!-- 
+        <div
+          class="col-md-12 border-bottom border-primary detail-transaksi-list p-3"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#detail-transaksi-tarik-tunai"
+        >
+          <i class="bi bi-cash fs-4 text-success me-2"></i>
+          <span>Tarik Tunai</span>
+          <i class="bi bi-chevron-compact-right fs-4 float-end"></i>
+        </div>
+        -->

@@ -1,0 +1,75 @@
+<% let Merchantss=IDMerchant() %>
+
+<div class="offcanvas canvas-right offcanvas-end p-3" id="transfer" style="width: 500px;">
+<i class=" back bi bi-arrow-left-circle-fill fs-3 ms-2 mb-2"data-bs-toggle="offcanvas" data-bs-target="#demos"></i>
+<div
+class="canvas-header-templates offcanvas-header text-center d-flex justify-content-center align-items-center">
+<div class="profile mt-3">
+    <i class="bi bi-send fs-3"></i>
+    <h4>Transfer</h4>
+</div>
+</div>
+<div class="offcanvas-body shadow-lg">
+<div class="shadow search-name border p-3">
+    <h4>Kirim Cepat</h4>
+    <div class="input-group mt-3">
+        <span class="input-group-text cari">
+            <i class="bi bi-search "></i>
+        </span>
+        <input type="text" class="form-control seacrh-name"
+            placeholder="cari nomor telepon/number account">
+    </div>
+    <div class="list-group result-fetch mt-3">
+
+    </div>
+</div>
+<div class="shadow transfer-name border p-3"
+    id="transfer-name">
+    <p class="text-secondary">Balance : <%= format(
+            data.bankAccount.balance )%>
+    </p>
+    <h4>Transfer ke
+    </h4>
+    <div class="row p-3">
+        <div class="col-md-12">
+            <form action="/transfer" method="post"
+                class="transfer-teman">
+                <div
+                    class="header-transfer d-flex align-items-center">
+                    <div>
+                        <i
+                            class="bi bi-person-circle fs-3 me-3 text-center"></i>
+                    </div>
+                    <div class="mt-2">
+                        <input type="text" id="tujuan"
+                            name="tujuan" readonly
+                            class="input-transfer fs-5 text-secondary"></input>
+                        <input type="text" name="pengirim"
+                            hidden id="pengirims"
+                            value="<%= data.name %>">
+                        <input type="text" name="IDMerchant"
+                            hidden id="IDMerchant"
+                            value="<%= Merchantss %>">
+                        <input type="text"
+                            id="IDSYNOXTujuan" readonly
+                            name="IDSYNOXTujuan"
+                            class="input-transfer fw-bold fs-5"></input>
+                    </div>
+                </div>
+                <p class="warning"></p>
+                <div class=" mb-3 mt-3">
+                    <input type="number"
+                        class="form-control pt-4 pb-4"
+                        id="jumlah"
+                        placeholder="masukan jumlah kirim"
+                        required name="jumlah"
+                        style="background-color: transparent; border: none;">
+                </div>
+                <button type="submit"
+                    class="btn w-100 btn-merchant btn-login">kirim</button>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+</div>

@@ -1,0 +1,221 @@
+<div
+  class="offcanvas canvas-right offcanvas-end p-3"
+  id="isi-saldo"
+  style="width: 500px"
+>
+  <i
+    class="back bi bi-arrow-left-circle-fill fs-3 ms-2 mb-2"
+    data-bs-toggle="offcanvas"
+    data-bs-target="#demos"
+  ></i>
+  <div
+    class="canvas-header-templates offcanvas-header text-center d-flex justify-content-center align-items-center"
+  >
+    <div class="profile mt-3">
+      <i class="bi bi-plus-circle fs-3"></i>
+      <h4>Isi Saldo</h4>
+    </div>
+  </div>
+  <div class="offcanvas-body shadow-lg">
+    <div class="shadow border p-3" style="background-color: rgb(233, 233, 233)">
+      <div class="row">
+        <div class="col-md-9 mb-3">
+          <h5 class="mb-3">Mau isi saldo SYNOX kamu dengan cara apa?</h5>
+          <form action="isi-saldo" method="post" class="isi-saldo">
+            <input
+              type="text"
+              name="name"
+              hidden
+              id="topup"
+              value="<%= data.name %>"
+            />
+            <input
+              type="text"
+              id="IDMerchantIsiSaldo"
+              name="IDMerchant"
+              value="<%= IDMerchant() %>"
+              hidden
+            />
+            <input
+              type="number"
+              class="input-saldo form-control pt-4 pb-4"
+              id="saldo"
+              placeholder="Isi saldo"
+              required
+              name="saldo"
+              style="background-color: transparent; border: none"
+            />
+            <button
+              type="submit"
+              class="btn btn-saldo w-100 btn-merchant btn-login"
+            >
+              Isi saldo
+            </button>
+          </form>
+        </div>
+        <div class="col-md-12 mb-3">
+          <span class="text-secondary">AGEN</span>
+          <div
+            class="list-isi-saldo rounded border-top p-4"
+            data-bs-toggle="collapse"
+            data-bs-target="#instruksi-agen"
+          >
+            <img src="../img/alfamart.png" alt="alfamart" style="width: 70px" />
+            <i class="bi bi-chevron-compact-down fs-4 float-end"></i>
+            <img
+              src="../img/indomaret.png"
+              alt="alfamart"
+              style="width: 70px"
+            />
+            <div id="instruksi-agen" class="collapse">
+              <p class="mt-3 fw-bold">Saya akan isi saldo menggunakan:</p>
+              <div class="col-md-8">
+                <img
+                  src="../img/indomaret.png"
+                  alt="alfamart"
+                  style="width: 50px"
+                />
+                <img
+                  src="../img/alfamart.png"
+                  alt="alfamart"
+                  style="width: 50px"
+                />
+              </div>
+              <div class="p-3 border rounded mt-3">
+                <p class="text-center">SYNOX ID (nomor telepon kamu)</p>
+                <h5 class="text-warning text-center">090878565</h5>
+                <p class="text-center mb-3">Nama Akun : PAPAL</p>
+                <h5>Ikuti instruksi pembayaran dibawah ini :</h5>
+                <div class="text-secondary">
+                  <p>1. Kunjungi gerai Alfamart atau Indomaret terdekat</p>
+                  <p>
+                    2. informasikan ke kasir bahwa anda ingin melakukan
+                    <strong>Top Up</strong>
+                  </p>
+                  <p>3. informasikan nomor telepon anda yang tertera di atas</p>
+                  <p>
+                    4. informasikan jumlah Top Up yang anda inginkan ke kasir
+                  </p>
+                  <p>
+                    5. ikuti instruksi selanjutnya dari kasir untuk
+                    menyelesaikan transaksi
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 mb-3">
+          <span class="text-secondary">TRANSFER BANK</span>
+          <div class="list-isi-saldo">
+            <div
+              class="d-flex align-items-center justify-content-between rounded border-top p-2"
+              data-bs-toggle="collapse"
+              data-bs-target="#instruksi-transfer-bank"
+            >
+              <img src="../img/BRI.png" alt="BRI" style="width: 100px" />
+              <span class="me-3">
+                <i class="bi bi-chevron-compact-down fs-4"></i>
+              </span>
+            </div>
+            <div id="instruksi-transfer-bank" class="collapse p-2">
+              <p class="fw-bold ms-3">Saya akan isi saldo menggunakan:</p>
+              <div class="col-md-8">
+                <img
+                  src="../img/BRI.png"
+                  class="ms-2"
+                  alt="BRI"
+                  style="width: 50px"
+                />
+              </div>
+              <div class="p-3 border rounded mt-1">
+                <p class="text-center">Nomor akun virtual BRI</p>
+                <h5 class="text-warning text-center">8881 09090899</h5>
+                <p class="text-center mb-3">Nama Akun : PAPAL</p>
+                <h5>Ikuti instruksi pembayaran dibawah ini :</h5>
+                <div
+                  class="border-top list-isi-saldo"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#instruksi-option1"
+                >
+                  <p class="p-3">
+                    Internet Bangkink BRI (Web Verison)
+                    <i class="bi bi-chevron-compact-down float-end fs-5"></i>
+                  </p>
+                  <div
+                    id="instruksi-option1"
+                    class="collapse text-secondary ms-3"
+                  >
+                    <p>1. Login ke ib.bri.co.id</p>
+                    <p>
+                      2. Pilih menu
+                      <strong>PEMBAYARAN BRIVA</strong>
+                    </p>
+                    <p>
+                      3. pilih sumber pembayaran,masukan
+                      <strong>88819909909</strong>
+                      ke
+                      <strong>kode bayar</strong> dan tekan
+                      <strong>kirim</strong>
+                    </p>
+                    <p>
+                      4. masukan jumlah top up yang anda ingin bayarkan, kemudia
+                      klik <strong>kirim</strong>.Apabila nomor virtual account
+                      benar,informasi transaksi akan ditampilkan
+                    </p>
+                    <p>
+                      5. konfirmasi transaksi dengan memasukan password internet
+                      bangkink anda dan klik <strong>permintaan mToken</strong>
+                      untuk mendapatkan mToken yang akan dikirim ke telepon anda
+                      kemudian masukan ke dalam kolom mToken dan klik
+                      <strong>kirim</strong>
+                    </p>
+                  </div>
+                </div>
+                <!-- 2  -->
+                <div
+                  class="border-top list-isi-saldo"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#instruksi-option2"
+                >
+                  <p class="p-3">
+                    Internet Bangkink BRI (Mobile Verison)
+                    <i class="bi bi-chevron-compact-down float-end fs-5"></i>
+                  </p>
+                  <div
+                    id="instruksi-option2"
+                    class="collapse text-secondary ms-3"
+                  >
+                    <p>1. buka aplikasi BRI mobile dan login</p>
+                    <p>
+                      2. Pilih menu
+                      <strong>PEMBAYARAN BRIVA</strong>
+                    </p>
+                    <p>
+                      3. tekan kolom
+                      <strong>kode bayar</strong>
+                      kemudian masukan
+                      <strong>88810909099</strong>
+                      sebagai<strong>No BRIVA</strong> dan klik
+                      <strong>OK</strong>
+                    </p>
+                    <p>
+                      4. masukan jumlah top up yang anda ingin bayarkan dan
+                      tekan <strong>kirim</strong>.Apabila nomor virtual account
+                      benar,informasi transaksi akan ditampilkan
+                    </p>
+                    <p>
+                      5. konfirmasi transaksi dengan memasukan password internet
+                      bangkink anda dan klik
+                      <strong>kirim</strong>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

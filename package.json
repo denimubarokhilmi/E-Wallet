@@ -1,0 +1,26 @@
+{
+  "name": "bank",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "create to app Bank",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "dev": "nodemon db/db.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kelompok-5",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.18.1",
+    "mongodb": "6.10"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}

@@ -1,0 +1,71 @@
+<% transaksi.forEach(el=> { %> <% el.sentTransactions.forEach(element=> { %> <%
+if (element.pengirim==data.name) { %>
+<div
+  class="offcanvas canvas-right offcanvas-end p-3"
+  id="<%= element.IDMerchant %>"
+  style="width: 500px"
+>
+  <i
+    class="back bi bi-arrow-left-circle-fill fs-3 ms-2 mb-2"
+    data-bs-toggle="offcanvas"
+    data-bs-target="#transaksi"
+  ></i>
+  <div
+    class="canvas-header-templates offcanvas-header text-center d-flex justify-content-center align-items-center"
+  >
+    <div class="profile mt-3 mb-3">
+      <img src="../img/logoapk.svg" alt="" />
+    </div>
+  </div>
+  <div class="offcanvas-body shadow-lg">
+    <div class="p-3">
+      <h4 class="text-center mb-3">Detail Transaksi</h4>
+      <div class="row">
+        <div class="col-md-12 text-secondary">
+          <p>
+            <%= element.tanggal %> <span> <%= element.waktu %> </span>
+            <span class="float-end"
+              >ID SYNOX <%= data.bankAccount.numberAcount %></span
+            >
+          </p>
+        </div>
+        <hr />
+        <div class="col-md-12 text-secondary">
+          <i class="bi bi-check-circle-fill text-success"></i>
+          <span>Transaksi berhasil</span>
+          <h5 class="text-dark mt-3">
+            Kirim uang RP <%= format( element.jumlah) %> ke <%= element.penerima
+            %> - <%= element.akunPenerima%>
+          </h5>
+          <p class="bg-info fw-bold text-dark mt-3 p-2">
+            Total bayar
+            <span class="float-end"> <%= format( element.jumlah) %> </span>
+          </p>
+          <p>
+            Metode pembayaran
+            <span class="float-end">Saldo SYNOX</span>
+          </p>
+          <hr />
+          <p>
+            ID Transaksi :
+            <span class="float-end"> <%= element.IDTransaksi%> </span>
+          </p>
+          <p>
+            IDMerchant
+            <span class="float-end"> <%= element.IDMerchant %> </span>
+          </p>
+          <p>
+            Penerima :
+            <span class="float-end"> <%= element.penerima %> </span>
+          </p>
+          <p>
+            Akun SYNOX :
+            <span class="float-end"> <%= element.akunPenerima %> </span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% } %> <% }) %> <% }) %>

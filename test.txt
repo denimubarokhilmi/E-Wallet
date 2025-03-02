@@ -1,0 +1,39 @@
+// 3 read (R);
+// - mencari semua products berdasakan category electronic
+db.products.find({
+    category:{
+        $in:['electronics']
+    }
+});
+// - mencari produk dengan harga lebih dari 1 juta
+db.products.find({
+    price: { $gt: 1000000 }
+});
+// - Cari produk berdasarkan nama Book.
+db.products.find({
+    name: "Book"
+});
+
+// 4 update (U);
+// - Ubah harga produk Smartphone menjadi 7 juta.
+db.products.updateOne({
+    name:'smartphone'
+},{
+    $set:{
+        price:7000000
+    }
+})
+// - Tambahkan properti baru rating ke semua dokumen di koleksi products dengan nilai default 4.5.
+db.products.updateMany({},{
+    $set: {
+        rating: 4.5
+    }
+});
+
+// 5 delete (d);
+// - Hapus produk dengan nama Laptop.
+db.products.deleteOne({name:'laptop'});
+//-  Hapus semua produk dengan stok kurang dari 10.
+db.products.deleteOne({stock:{
+    $gt: 10
+}})

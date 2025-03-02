@@ -1,0 +1,58 @@
+<% transaksi.forEach(el=> { %> <% el.receivedTransactions.forEach(element=> { %>
+<% if (element.penerima==data.name ) { %>
+<div
+  class="offcanvas canvas-right offcanvas-end p-3"
+  id="<%= element.IDTransaksi%>"
+  style="width: 500px"
+>
+  <i
+    class="back bi bi-arrow-left-circle-fill fs-3 ms-2 mb-2"
+    data-bs-toggle="offcanvas"
+    data-bs-target="#transaksi"
+  ></i>
+  <div
+    class="canvas-header-templates offcanvas-header text-center d-flex justify-content-center align-items-center"
+  >
+    <div class="profile mt-3 mb-3">
+      <img src="../img/logoapk.svg" alt="" />
+    </div>
+  </div>
+  <div class="offcanvas-body shadow-lg">
+    <div class="p-3">
+      <h4 class="text-center mb-3">Detail Transaksi</h4>
+      <div class="row">
+        <div class="col-md-12 text-secondary">
+          <p>
+            <%= element.tanggal%> <span> <%= element.waktu%> </span>
+            <span class="float-end"
+              >ID SYNOX <%= data.bankAccount.numberAcount %></span
+            >
+          </p>
+        </div>
+        <hr />
+        <div class="col-md-12 text-secondary">
+          <i class="bi bi-check-circle-fill text-success"></i>
+          <span>Berhasil diterima</span>
+          <h5 class="text-dark mt-3">
+            Terima transfer RP <%= format(element.jumlah) %> dari <%=
+            element.pengirim%>
+          </h5>
+          <p class="bg-info fw-bold text-dark mt-3 p-2">
+            Total Terima
+            <span class="float-end"> <%= format( element.jumlah)%> </span>
+          </p>
+          <hr />
+          <p>
+            ID Transaksi :
+            <span class="float-end"> <%= element.IDTransaksi %> </span>
+          </p>
+          <p>
+            ID Merchant :
+            <span class="float-end"> <%= element.IDMerchant %> </span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% } %> <% }) %> <% }) %>
